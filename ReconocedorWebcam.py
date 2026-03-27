@@ -11,7 +11,7 @@ class ReconocedorWebcam:
     def iniciar_reconocimiento(self):
         cap = cv2.VideoCapture(0)
 
-        # OPTIMIZACIÓN 1: Reducir resolución para que la laptop no sufra
+        # OPTIMIZACIÓN 1: Reducir resolución
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
@@ -24,12 +24,12 @@ class ReconocedorWebcam:
         ultima_caja_verde = None
 
         while True:
-            ret, frame = cap.read()
+            ret, frame = cap.read() # Captura un cuadro de la cámara y en caso de no ser posible, muestra un error y sale del bucle
             if not ret:
                 print("Error al acceder a la cámara.")
                 break
 
-            alto, ancho = frame.shape[:2]
+            alto, ancho = frame.shape[:2] # Obtener las dimensiones del frame.
 
             tamano_caja = 300
             x_caja = int((ancho - tamano_caja) / 2)

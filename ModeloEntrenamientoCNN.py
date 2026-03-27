@@ -10,7 +10,6 @@ class EntrenadorCNN:
         print("Cargando dataset MNIST...")
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-        # Preprocesamiento: MNIST tiene imágenes de 28x28.
         # Las redimensionamos para indicar que tienen 1 canal (escala de grises) y normalizamos (0 a 1).
         x_train = x_train.reshape((x_train.shape[0], 28, 28, 1)).astype('float32') / 255.0
         x_test = x_test.reshape((x_test.shape[0], 28, 28, 1)).astype('float32') / 255.0
