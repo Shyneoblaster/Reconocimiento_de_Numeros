@@ -1,0 +1,16 @@
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos Virtuales
+venv/
+env/
+.venv/
+
+# Configuraciones de IDEs (PyCharm, VSCode, etc)
+.idea/
+.vscode/
+*.swp
+
+.idea/
